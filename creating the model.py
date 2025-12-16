@@ -13,6 +13,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
+import joblib
 
 # =============================
 # 1) Load the dataset
@@ -113,3 +114,9 @@ plt.xticks(rotation=45)
 plt.title('Feature Importance (Random Forest)')
 plt.tight_layout()
 plt.show()
+
+# =============================
+# 10) Save the trained model
+# =============================
+joblib.dump(single_model, 'insurance_model.pkl')
+print("Model saved as 'insurance_model.pkl'")
